@@ -1,0 +1,31 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 301" width="100" height="301">
+	<title>5361129-ai</title>
+	<defs>
+		<linearGradient id="grd1" gradientUnits="userSpaceOnUse"  x1="258.841" y1="61.275" x2="258.841" y2="354.275">
+			<stop offset="0.187" stop-color="#ffd352"  />
+			<stop offset="1" stop-color="#ff651f"  />
+		</linearGradient>
+		<linearGradient id="grd2" gradientUnits="userSpaceOnUse"  x1="166.626" y1="346.301" x2="67.941" y2="258.977">
+			<stop offset="0" stop-color="#072380"  />
+			<stop offset="1" stop-color="#098ec3"  />
+		</linearGradient>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: url(#grd1) } 
+		.shp1 { fill: #2a3036 } 
+		.shp2 { fill: url(#grd2) } 
+	</style>
+	<g id="OBJECTS">
+		<g id="&lt;Group&gt;">
+			<g id="&lt;Group&gt;">
+				<path id="&lt;Path&gt;" class="shp0" d="M252.37 234.68C249.18 215.87 231.78 96.95 228.58 85.24C225.39 73.52 216.52 67.84 204.09 67.84L55.6 67.84C43.17 67.84 34.3 73.52 31.1 85.24C27.91 96.95 10.51 215.87 7.32 234.68C4.13 253.5 13.71 268.05 37.14 268.05L87.25 268.05L87.25 167.95L172.44 167.95L172.44 268.05L222.55 268.05C245.99 268.05 255.57 253.5 252.37 234.68Z" />
+				<g id="&lt;Group&gt;">
+					<path id="&lt;Path&gt;" class="shp1" d="M182.68 89.85C180.67 89.85 178.87 88.41 178.5 86.36L172.11 51.45C168.38 31.05 150.21 15.67 129.84 15.67C109.48 15.67 91.31 31.05 87.58 51.45L81.2 86.36C80.77 88.67 78.55 90.2 76.24 89.78C73.92 89.36 72.39 87.14 72.82 84.83L79.2 49.92C83.66 25.53 105.43 7.15 129.84 7.15C154.26 7.15 176.04 25.53 180.49 49.92L186.88 84.83C187.3 87.14 185.77 89.36 183.45 89.78C183.19 89.83 182.93 89.85 182.68 89.85Z" />
+				</g>
+				<path id="&lt;Path&gt;" class="shp2" d="M156.06 293.25L87.25 268.05L87.25 167.95L156.06 193.15L156.06 293.25Z" />
+				<path id="&lt;Path&gt;" class="shp1" d="M149.93 241.07C149.93 244.16 148.15 246.66 145.94 246.66C143.73 246.66 141.95 244.16 141.95 241.07C141.95 237.98 143.73 235.48 145.94 235.48C148.15 235.48 149.93 237.98 149.93 241.07Z" />
+			</g>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,29 @@
+.descricao {
+    justify-content: center;
+    width: 100%;
+}
+.row {
+    margin-top: 16px;
+    justify-content: center;
+}
+h1 {
+    text-align: center;
+}
+.buttonDetalhes {
+    width: 50%;
+}
+.col {
+    text-align: center;
+}
+.card-body {
+    border-radius: 16px;
+}
+.inf {
+    max-width: 300px;
+}
+h3 {
+    color: orange;
+}
+.imagem {
+    width: 15rem;
+}

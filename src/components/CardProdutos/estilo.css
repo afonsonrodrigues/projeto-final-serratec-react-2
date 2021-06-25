@@ -1,0 +1,8 @@
+.cardProduto {
+    width: 15rem;
+    padding: 10px;
+    margin: 5px;
+}
+.btnAdicionar:hover {
+    padding: 0px;
+}

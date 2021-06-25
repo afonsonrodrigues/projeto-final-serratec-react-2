@@ -1,0 +1,19 @@
+.fundo {
+  background-color: #1abc9c;
+}
+ .principal {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.principal img {
+  width: 350px;
+  max-width: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.principal h1 {
+  margin: 25px 0;
+}

@@ -1,0 +1,58 @@
+section {
+    margin: auto;
+    padding: 20px;
+    width: 100%;
+
+}
+
+.header {
+    height: 120px;
+    display: flex;
+    align-items:center;
+    margin-bottom: 30px;
+    padding-left: 25px;
+    background-color: #fcfcfc;
+}
+
+.header p {
+    margin: 20px;
+    font-size: 1.6rem;
+}
+
+.header img {
+    width: 80px;
+    margin: 0;
+}
+
+.bodyCarrinho {
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    background-color: #fcfcfc;
+}
+
+.linha {
+    vertical-align: middle;
+}
+
+.btnExcluir {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btnExcluir button {
+    margin: 0;
+    width: 100px;
+}
+
+.btnExcluir button:hover {
+    border: 1px solid transparent;
+}
+
+.btnFinalizar {
+    width: 150px;
+    border: 3px solid transparent;
+    margin-right: .5rem;
+}
