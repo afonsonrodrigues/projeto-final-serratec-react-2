@@ -27,7 +27,7 @@ const FormularioLogin = ({ onLogin, pegarNome }) => {
                     "userName",
                     response.data.cliente.userNameCliente
                 );
-                onLogin(response.data.token);
+                onLogin(localStorage.getItem('token'));
                 pegarNome(response.data.cliente.userNameCliente);
                 console.log(response.data);
                 console.log(response.data.cliente.userNameCliente);
@@ -43,7 +43,7 @@ const FormularioLogin = ({ onLogin, pegarNome }) => {
             <input type="text" value={email} onChange={manipularEmail} />
             <label>Senha</label>
             <input type="password" value={senha} onChange={manipularSenha} />
-            <button className="btnLogin">Login</button>
+            <button>Login</button>
             <p>
                 Ainda não é cadastrado?{" "}
                 <Link to="/cliente-cadastro">
