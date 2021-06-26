@@ -43,7 +43,7 @@ const FormularioLogin = ({ onLogin, pegarNome }) => {
             <input type="text" value={email} onChange={manipularEmail} />
             <label>Senha</label>
             <input type="password" value={senha} onChange={manipularSenha} />
-            <button>Login</button>
+            <button className="btnLogin">Login</button>
             <p>
                 Ainda não é cadastrado?{" "}
                 <Link to="/cliente-cadastro">

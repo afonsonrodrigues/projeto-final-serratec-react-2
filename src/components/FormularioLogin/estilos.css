@@ -48,7 +48,7 @@ input:focus {
   border-bottom: 3px solid rgb(86, 83, 83);
 }
 
-button {
+.btnLogin {
   width: 100%;
   font-size: 1rem;
   padding: 10px;
