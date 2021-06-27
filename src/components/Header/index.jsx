@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 
 import "./estilos.css";
 
-const Header = ({ token, carrinho }) => {
+const Header = ({ token, onLogout,carrinho }) => {
     const history = useHistory();
 
     const logout = () => {
@@ -12,6 +12,7 @@ const Header = ({ token, carrinho }) => {
         localStorage.removeItem("token");
         localStorage.removeItem("userName");
         localStorage.removeItem("email");
+        onLogout()
     };
 
     const numeroDeProdutos = carrinho.length;
@@ -57,13 +58,12 @@ const Header = ({ token, carrinho }) => {
                             </Link>
                         </li>
                         <li>
-                            <a
+                            <Link to="#"
                                 className="dropdown-item btnLogin"
-                                href="/"
                                 onClick={logout}
                             >
                                 <i className="fas fa-sign-out-alt"></i><span className="ms-2">Sair</span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

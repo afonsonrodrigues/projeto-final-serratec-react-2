@@ -24,6 +24,10 @@ function App() {
         setToken(token)
     }
 
+    const onLogout = () => {
+        setToken('')
+    }
+
     const [carrinho, setCarrinho] = useState([]);
     const adicionaProduto = (produto) => {
         setCarrinho([...carrinho, produto]);
@@ -53,6 +57,7 @@ function App() {
                 <Header
                     token={token}
                     carrinho={carrinho}
+                    onLogout={onLogout}
                 />
                 <Navbar navbar={menu} />
                 <Switch>
