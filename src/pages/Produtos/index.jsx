@@ -2,7 +2,7 @@ import CardProdutos from "../../components/CardProdutos";
 import "./estilos.css";
 import http from "../../components/http";
 import { useState, useEffect } from "react";
-const Produtos = ({ adicionaProduto }) => {
+const Produtos = ({ adicionaProduto, token }) => {
     const [produtos, setProdutos] = useState([]);
 
     const getProdutos = () => {
@@ -26,6 +26,7 @@ const Produtos = ({ adicionaProduto }) => {
                         imagem={produto.imagemBase64}
                         codigo={produto.codigo}
                         adicionaProduto={adicionaProduto}
+                        token={token}
                     />
                 ))}
             </div>
