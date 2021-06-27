@@ -48,16 +48,6 @@ const Header = ({ token, onLogout,carrinho }) => {
                             </Link>
                         </li>
                         <li>
-                            <Link
-                                to=""
-                                className="dropdown-item btnLogin"
-                                href="#"
-                            >
-                                <i className="fas fa-shopping-basket"></i><span className="ms-2">Meus
-                                pedidos</span>
-                            </Link>
-                        </li>
-                        <li>
                             <Link to="#"
                                 className="dropdown-item btnLogin"
                                 onClick={logout}
