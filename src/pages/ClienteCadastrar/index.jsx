@@ -101,7 +101,7 @@ const ClienteCadastrar = () => {
                     <img src={logoLogin} alt="Logo login" />
                     <h3>Cadastro</h3>
                     <div className=" d-flex flex-row flex-wrap">
-                        <div className="col-md-6">
+                        <div className="cadastro1">
                             <div>
                                 <label>Nome</label>
                                 <input
@@ -186,7 +186,7 @@ const ClienteCadastrar = () => {
                                 />
                             </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="cadastro2">
                             <div>
                                 <label>Cep</label>
                                 <input
