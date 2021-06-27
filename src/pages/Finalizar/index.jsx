@@ -25,10 +25,15 @@ const Finalizar = () => {
         };
         http.post("pedido/finalizar", pedido)
             .then((response) => {
-                console.log(response);
+                console.log(response.data);
                 setMensagem("Compra efetuada com sucesso");
-                setEntrega(response.data)
-                verificarResultado(entrega)
+                setEntrega(response.data);
+                {response.map((item) => (
+                    <div key={item.codigoPedido}>
+                        <p>{item.codigoPedido}</p>
+                    </div>
+                ))}
+                // verificarResultado(response.data)
             })
             .catch((erro) => {
                 console.log(erro);
@@ -37,7 +42,16 @@ const Finalizar = () => {
 
     const verificarResultado = (entrega) => {
         if (entrega) {
-            return "Foiii"
+            return (
+                <>
+                    {/* {entrega.map((item) => (
+                        <div key={item.codigoPedido}>
+                            <p>{item.codigoPedido}</p>
+                        </div>
+                    ))} */}
+
+                </>
+            )
         }
 
         return (
@@ -53,7 +67,7 @@ const Finalizar = () => {
                     ))}
                 </select>
                 <button>Finalizar</button>
-                {mensagem && <MensagemAcerto msg={mensagem} entrega={entrega}/>}
+                {mensagem && <MensagemAcerto msg={mensagem} entrega={entrega} />}
             </form>
         )
 
