@@ -5,7 +5,7 @@ import MensagemAcerto from "../Login/MensagemAcerto";
 
 import './estilos.css';
 
-const Finalizar = () => {
+const Finalizar = ({ limparCarrinho }) => {
     const { id } = useParams();
 
     const [pagamento, setPagamento] = useState("");
@@ -29,6 +29,7 @@ const Finalizar = () => {
                 setMensagem("Compra efetuada com sucesso");
                 setEntrega(response.data)
                 verificarResultado(entrega)
+                limparCarrinho()
             })
             .catch((erro) => {
                 console.log(erro);

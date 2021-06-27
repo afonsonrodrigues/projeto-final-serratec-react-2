@@ -29,6 +29,10 @@ function App() {
         setCarrinho('')
     }
 
+    const limparCarrinho = () => {
+        setCarrinho('')
+    }
+
     const [carrinho, setCarrinho] = useState([]);
     const adicionaProduto = (produto) => {
         setCarrinho([...carrinho, produto]);
@@ -90,7 +94,7 @@ function App() {
                         <Categorias />
                     </Route>
                     <Route path="/finalizar/:id">
-                        <Finalizar />
+                        <Finalizar limparCarrinho={limparCarrinho} />
                     </Route>
                     <Route>
                         <Pagina404 />
