@@ -3,12 +3,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./estilos.css";
 import { useHistory } from "react-router-dom";
-
+import MensagemErro from "../../pages/Login/MensagemErro";
 import logoLogin from "../../assets/img/logoLogin.png";
 
 const FormularioLogin = ({ onLogin, pegarNome }) => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+    const [mensagem, setMensagem] = useState("");
     const manipularEmail = (ev) => setEmail(ev.target.value);
     const manipularSenha = (ev) => setSenha(ev.target.value);
     const history = useHistory();
@@ -30,10 +31,17 @@ const FormularioLogin = ({ onLogin, pegarNome }) => {
                 onLogin(localStorage.getItem('token'))
                 history.push("/");
             })
-            .catch((erro) => console.log(erro));
+            .catch((erro) => {
+                console.log(erro);
+                setMensagem("E-mail ou senha incorretos");
+                setTimeout(() => {
+                    setMensagem("");
+                }, 2000); 
+            });
     };
     return (
         <form className="formLogin" onSubmit={logar}>
+            {mensagem && <MensagemErro msg={mensagem} />}
             <img className="logoLogin" src={logoLogin} alt="Logo e-commerce" />
             <h3>Login</h3>
             <label>E-mail</label>

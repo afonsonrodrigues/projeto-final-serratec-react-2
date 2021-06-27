@@ -66,7 +66,7 @@ const ClienteCadastrar = () => {
                 estado: estado,
             },
         };
-        console.log(usuario);
+        
         http.post("cliente", usuario)
             .then((response) => {
                 history.push("/login/");
