@@ -57,7 +57,7 @@ const Produto = (props) => {
                     <div className="col card card-body inf">
                         <h1 className="produto">{produto.nome}</h1>
                         <h3 className="preco">R$ {produto.preco}</h3>
-                        <button className="buttonDetalhes">
+                        <button className="buttonDetalhes" onClick={adicionar}>
                             Adicionar ao carrinho
                         </button>
                     </div>
