@@ -4,19 +4,21 @@ import { Link, useHistory } from "react-router-dom";
 
 import "./estilos.css";
 
-const Header = ({ nome, token, onLogout, carrinho }) => {
+const Header = ({ token, carrinho }) => {
     const history = useHistory();
 
     const logout = () => {
         history.push("/login");
-        onLogout();
         localStorage.removeItem("token");
         localStorage.removeItem("userName");
+        localStorage.removeItem("email");
     };
 
     const numeroDeProdutos = carrinho.length;
 
-    const verificarLogin = () => {
+    let nome = localStorage.getItem('userName')
+
+    const verificarLogin = (token) => {
         if (token) {
             return (
                 <div className="btn-group usuarioLogado">
@@ -40,8 +42,8 @@ const Header = ({ nome, token, onLogout, carrinho }) => {
                                 className="dropdown-item btnLogin"
                                 href="#"
                             >
-                                <i className="fas fa-user-edit"></i> Editar
-                                cadastro
+                                <i className="fas fa-user-edit"></i><span className="ms-2">Editar
+                                cadastro</span>
                             </Link>
                         </li>
                         <li>
@@ -50,8 +52,8 @@ const Header = ({ nome, token, onLogout, carrinho }) => {
                                 className="dropdown-item btnLogin"
                                 href="#"
                             >
-                                <i className="fas fa-shopping-basket"></i> Meus
-                                pedidos
+                                <i className="fas fa-shopping-basket"></i><span className="ms-2">Meus
+                                pedidos</span>
                             </Link>
                         </li>
                         <li>
@@ -60,7 +62,7 @@ const Header = ({ nome, token, onLogout, carrinho }) => {
                                 href="/"
                                 onClick={logout}
                             >
-                                <i className="fas fa-sign-out-alt"></i> Sair
+                                <i className="fas fa-sign-out-alt"></i><span className="ms-2">Sair</span>
                             </a>
                         </li>
                     </ul>
@@ -86,7 +88,7 @@ const Header = ({ nome, token, onLogout, carrinho }) => {
             </Link>
 
             <div className="header-carrinho">
-                {verificarLogin()}
+                {verificarLogin(localStorage.getItem('token'))}
                 <div className="carrinho">
                     <Link to="/carrinho">
                         <i className="fas fa-shopping-cart"></i>

@@ -27,10 +27,7 @@ const FormularioLogin = ({ onLogin, pegarNome }) => {
                     "userName",
                     response.data.cliente.userNameCliente
                 );
-                onLogin(localStorage.getItem('token'));
-                pegarNome(response.data.cliente.userNameCliente);
-                console.log(response.data);
-                console.log(response.data.cliente.userNameCliente);
+                onLogin(localStorage.getItem('token'))
                 history.push("/");
             })
             .catch((erro) => console.log(erro));
