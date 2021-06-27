@@ -1,0 +1,26 @@
+.main {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.main form {
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fcfcfc;
+    border-radius: 15px;
+    -webkit-box-shadow: 10px 10px 17px 1px rgba(115,115,115,1);
+    -moz-box-shadow: 10px 10px 17px 1px rgba(115,115,115,1);
+    box-shadow: 10px 10px 17px 1px rgba(115,115,115,1);
+  }
+
+.main h3 {
+    margin-bottom: 40px;
+}
