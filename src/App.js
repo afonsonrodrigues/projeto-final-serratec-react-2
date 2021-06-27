@@ -17,21 +17,16 @@ import Finalizar from "./pages/Finalizar";
 import Pagina404 from "./pages/Pagina404";
 
 function App() {
-    const [token, setToken] = useState("");
+
+    const [token, setToken] = useState('')
+
     const onLogin = (token) => {
-        setToken(token);
-    };
+        setToken(token)
+    }
 
-    const [userName, setUserName] = useState("");
-
-    const pegarNome = (nome) => {
-        setUserName(nome);
-    };
-
-    const logout = () => {
-        setToken("");
-        setUserName("");
-    };
+    const onLogout = () => {
+        setToken('')
+    }
 
     const [carrinho, setCarrinho] = useState([]);
     const adicionaProduto = (produto) => {
@@ -61,9 +56,8 @@ function App() {
             <BrowserRouter>
                 <Header
                     token={token}
-                    onLogout={logout}
-                    nome={userName}
                     carrinho={carrinho}
+                    onLogout={onLogout}
                 />
                 <Navbar navbar={menu} />
                 <Switch>
@@ -77,7 +71,7 @@ function App() {
                         <ClienteEditar />
                     </Route>
                     <Route path="/login">
-                        <Login onLogin={onLogin} pegarNome={pegarNome} />
+                        <Login onLogin={onLogin}/>
                     </Route>
                     <Route path="/carrinho">
                         <Carrinho

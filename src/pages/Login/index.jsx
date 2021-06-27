@@ -4,7 +4,7 @@ import './estilos.css'
 const Login = (props) => {  
   return(
     <>
-        <FormularioLogin onLogin={props.onLogin} pegarNome={props.pegarNome}/>
+        <FormularioLogin onLogin={props.onLogin} />
     </>
   )
 

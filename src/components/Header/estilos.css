@@ -57,10 +57,15 @@ header {
     font-size: 0.9rem;
     text-align: right;
 }
+
 .usuarioLogado button:hover {
     background-color: transparent;
     color: #fcfcfc;
     border: none;
+}
+
+.usuarioLogado button:focus {
+    outline: none;
 }
 
 .usuarioLogado li {
@@ -68,10 +73,13 @@ header {
 }
 
 .usuarioLogado a {
+    justify-content: flex-start;
+    align-items: center;
     height: 100%;
     border-radius: 0;
     color: #000;
 }
+
 .usuarioLogado a:hover {
     height: 100%;
     border-radius: 0;
@@ -88,7 +96,7 @@ header {
     position: relative;
     display: flex;
     align-items: center;
-    width: 80px;
+    width: 50px;
     justify-content: flex-end;
 }
 

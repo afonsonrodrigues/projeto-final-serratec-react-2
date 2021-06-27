@@ -18,8 +18,8 @@ const Produto = () => {
 
     return (
         <form onSubmit={adicionarCarrinho}>
-            <div className="container">
-                <div className="row row-cols-2">
+            <div className="container mt-5">
+                <div className="row row-cols-2 produtoDetalhado">
                     <div className="col inf">
                         <img
                             className="imagem"
@@ -34,7 +34,7 @@ const Produto = () => {
                             Adicionar ao carrinho
                         </button>
                     </div>
-                    <div className="row">
+                    <div className="row cardDescricao">
                         <div className="col descricao collapse-show card card-body">
                             <p>
                                 {" "}

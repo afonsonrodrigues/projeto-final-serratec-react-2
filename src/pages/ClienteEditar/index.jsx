@@ -2,6 +2,7 @@ import CardFormulario from "../../components/CardFormulario";
 import { useParams } from "react-router-dom";
 import http from "../../components/http";
 import { useState, useEffect } from "react";
+import logoLogin from '../../assets/img/logoLogin.png';
 
 const ClienteEditar = () => {
 
@@ -88,8 +89,9 @@ const ClienteEditar = () => {
     return (
         <div>
             <CardFormulario>
-                <h1>Edição de Cadastro</h1>
                 <form className="formCadastro" onSubmit={efetuarCadastro}>
+                    <img src={logoLogin} alt="Logo login" />
+                    <h3>Editar Cadastro</h3>
                     <div>
                         <label>Nome</label>
                         <input
