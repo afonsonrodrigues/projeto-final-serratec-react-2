@@ -23,12 +23,13 @@ const FormularioLogin = ({ onLogin, pegarNome }) => {
 
         http.post("auth", usuario)
             .then((response) => {
+                localStorage.setItem("id", response.data.cliente.id);
                 localStorage.setItem("token", response.data.token);
                 localStorage.setItem(
                     "userName",
                     response.data.cliente.userNameCliente
                 );
-                onLogin(localStorage.getItem('token'))
+                onLogin(localStorage.getItem("token"));
                 history.push("/");
             })
             .catch((erro) => {
@@ -36,7 +37,7 @@ const FormularioLogin = ({ onLogin, pegarNome }) => {
                 setMensagem("E-mail ou senha incorretos");
                 setTimeout(() => {
                     setMensagem("");
-                }, 2000); 
+                }, 2000);
             });
     };
     return (

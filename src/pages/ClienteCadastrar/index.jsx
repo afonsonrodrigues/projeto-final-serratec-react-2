@@ -66,7 +66,7 @@ const ClienteCadastrar = () => {
                 estado: estado,
             },
         };
-        
+
         http.post("cliente", usuario)
             .then((response) => {
                 history.push("/login/");
@@ -100,138 +100,151 @@ const ClienteCadastrar = () => {
                 <form className="formCadastro" onSubmit={efetuarCadastro}>
                     <img src={logoLogin} alt="Logo login" />
                     <h3>Cadastro</h3>
-                    <div>
-                        <label>Nome</label>
-                        <input
-                            required
-                            type="text"
-                            value={nome}
-                            onChange={(evento) => setNome(evento.target.value)}
-                            placeholder="Digite seu nome completo"
-                        />
+                    <div className=" d-flex flex-row flex-wrap">
+                        <div className="col-md-6">
+                            <div>
+                                <label>Nome</label>
+                                <input
+                                    required
+                                    type="text"
+                                    value={nome}
+                                    onChange={(evento) =>
+                                        setNome(evento.target.value)
+                                    }
+                                    placeholder="Digite seu nome completo"
+                                />
+                            </div>
+                            <div>
+                                <label>Email</label>
+                                <input
+                                    required
+                                    type="email"
+                                    value={email}
+                                    onChange={(evento) =>
+                                        setEmail(evento.target.value)
+                                    }
+                                    placeholder="Digite seu email"
+                                />
+                            </div>
+                            <div>
+                                <label>Username</label>
+                                <input
+                                    required
+                                    type="text"
+                                    value={userName}
+                                    onChange={(evento) =>
+                                        setUserName(evento.target.value)
+                                    }
+                                    minLength="5"
+                                    placeholder="Digite seu nome de usuário"
+                                />
+                            </div>
+                            <form className="row g-3">
+                                <label>Senha</label>
+                                <input
+                                    required
+                                    type="password"
+                                    value={senha}
+                                    onChange={(evento) =>
+                                        setSenha(evento.target.value)
+                                    }
+                                    placeholder="Crie uma senha de 8 a 15 digitos"
+                                />
+                            </form>
+                            <div>
+                                <label>CPF</label>
+                                <input
+                                    required
+                                    type="number"
+                                    value={cpf}
+                                    onChange={cpfHandle}
+                                    placeholder="Apenas os 11 digitos"
+                                />
+                            </div>
+                            <div>
+                                <label>Telefone</label>
+                                <input
+                                    required
+                                    type="number"
+                                    value={telefone}
+                                    onChange={(evento) =>
+                                        setTelefone(evento.target.value)
+                                    }
+                                    placeholder="(XX) 99999-9999"
+                                />
+                            </div>
+                            <div>
+                                <label>Data de Nascimento</label>
+                                <input
+                                    required
+                                    type="data"
+                                    value={dataNascimento}
+                                    onChange={(evento) =>
+                                        setDataNascimento(evento.target.value)
+                                    }
+                                    placeholder="YYYY-MM-DD"
+                                />
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div>
+                                <label>Cep</label>
+                                <input
+                                    required
+                                    type="number"
+                                    value={cep}
+                                    onBlur={obterCep}
+                                    onChange={cepHandle}
+                                    placeholder="Apenas os 8 digitos"
+                                />
+                            </div>
+                            <div>
+                                <label>Rua</label>
+                                <input
+                                    required
+                                    type="text"
+                                    value={rua}
+                                    onChange={(evento) =>
+                                        setRua(evento.target.value)
+                                    }
+                                />
+                            </div>
+                            <div>
+                                <label>Numero Residência</label>
+                                <input
+                                    required
+                                    type="number"
+                                    value={numero}
+                                    onChange={(evento) =>
+                                        setNumero(evento.target.value)
+                                    }
+                                    placeholder="Digite o número da sua residência"
+                                />
+                            </div>
+                            <div>
+                                <label>Bairro</label>
+                                <input
+                                    required
+                                    type="text"
+                                    value={bairro}
+                                    onChange={(evento) =>
+                                        setBairro(evento.target.value)
+                                    }
+                                />
+                            </div>
+                            <div>
+                                <label>Cidade</label>
+                                <input
+                                    required
+                                    type="text"
+                                    value={cidade}
+                                    onChange={(evento) =>
+                                        setCidade(evento.target.value)
+                                    }
+                                />
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label>Email</label>
-                        <input
-                            required
-                            type="email"
-                            value={email}
-                            onChange={(evento) => setEmail(evento.target.value)}
-                            placeholder="Digite seu email"
-                        />
-                    </div>
-                    <div>
-                        <label>Username</label>
-                        <input
-                            required
-                            type="text"
-                            value={userName}
-                            onChange={(evento) =>
-                                setUserName(evento.target.value)
-                            }
-                            minLength="5"
-                            placeholder="Digite seu nome de usuário"
-                        />
-                    </div>
-                    <div>
-                        <label>Senha</label>
-                        <input
-                            required
-                            type="password"
-                            value={senha}
-                            onChange={(evento) => setSenha(evento.target.value)}
-                            placeholder="Crie uma senha de 8 a 15 digitos"
-                        />
-                    </div>
-                    <div>
-                        <label>CPF</label>
-                        <input
-                            required
-                            type="number"
-                            value={cpf}
-                            onChange={cpfHandle}
-                            placeholder="Apenas os 11 digitos"
-                        />
-                    </div>
-                    <div>
-                        <label>Telefone</label>
-                        <input
-                            required
-                            type="number"
-                            value={telefone}
-                            onChange={(evento) =>
-                                setTelefone(evento.target.value)
-                            }
-                            placeholder="(XX) 99999-9999"
-                        />
-                    </div>
-                    <div>
-                        <label>Data de Nascimento</label>
-                        <input
-                            required
-                            type="data"
-                            value={dataNascimento}
-                            onChange={(evento) =>
-                                setDataNascimento(evento.target.value)
-                            }
-                            placeholder="YYYY-MM-DD"
-                        />
-                    </div>
-                    <div>
-                        <label>Cep</label>
-                        <input
-                            required
-                            type="number"
-                            value={cep}
-                            onBlur={obterCep}
-                            onChange={cepHandle}
-                            placeholder="Apenas os 8 digitos"
-                        />
-                    </div>
-                    <div>
-                        <label>Rua</label>
-                        <input
-                            required
-                            type="text"
-                            value={rua}
-                            onChange={(evento) => setRua(evento.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label>Numero Residência</label>
-                        <input
-                            required
-                            type="number"
-                            value={numero}
-                            onChange={(evento) =>
-                                setNumero(evento.target.value)
-                            }
-                            placeholder="Digite o número da sua residência"
-                        />
-                    </div>
-                    <div>
-                        <label>Bairro</label>
-                        <input
-                            required
-                            type="text"
-                            value={bairro}
-                            onChange={(evento) =>
-                                setBairro(evento.target.value)
-                            }
-                        />
-                    </div>
-                    <div>
-                        <label>Cidade</label>
-                        <input
-                            required
-                            type="text"
-                            value={cidade}
-                            onChange={(evento) =>
-                                setCidade(evento.target.value)
-                            }
-                        />
-                    </div>
-                    <div></div>
                     <button>Cadastrar</button>
                 </form>
             </CardFormulario>

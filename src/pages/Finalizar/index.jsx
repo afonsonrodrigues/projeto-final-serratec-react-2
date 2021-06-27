@@ -50,22 +50,29 @@ const Finalizar = ({ limparCarrinho }) => {
                         com sucesso!!!
                     </p>
                     <p>Número do pedido: {entrega.codigoPedido}</p>
-                    <p>Data da entega: {entrega.dataPedido}</p>
-                    {entrega.itens.map((item) => (
-                        <div className="card cardFinalizar">
-                            <div className="card-header">{item.nome}</div>
-                            <ul className="list-group list-group-flush">
-                                <li className="list-group-item">
-                                    Qtd: {item.quantidade}
-                                </li>
-                                <li className="list-group-item">
-                                    Valor unitário:{" "}
-                                    {formatter.format(item.preco)}
-                                </li>
-                            </ul>
-                        </div>
-                    ))}
-                    <p>{formatter.format(entrega.totalPedido)}</p>
+                    <p>Data do pedido: {entrega.dataPedido}</p>
+                    <p>Data da entrega: {entrega.dataEntrega}</p>
+                    <div className="d-flex flex-row justify-content-center container flex-wrap">
+                        {entrega.itens.map((item) => (
+                            <div className="card cardFinalizar m-3">
+                                <div className="card-header">{item.nome}</div>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">
+                                        Qtd: {item.quantidade}
+                                    </li>
+                                    <li className="list-group-item">
+                                        Valor unitário:{" "}
+                                        {formatter.format(item.preco)}
+                                    </li>
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                    <p>
+                        {" "}
+                        Valor total do pedido:{" "}
+                        {formatter.format(entrega.totalPedido)}
+                    </p>
                 </>
             );
         }

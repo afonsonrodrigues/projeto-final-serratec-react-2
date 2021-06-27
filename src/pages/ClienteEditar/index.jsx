@@ -1,12 +1,11 @@
 import CardFormulario from "../../components/CardFormulario";
-import { useParams } from "react-router-dom";
 import http from "../../components/http";
 import { useState, useEffect } from "react";
-import logoLogin from '../../assets/img/logoLogin.png';
+import logoLogin from "../../assets/img/logoLogin.png";
+import { useHistory } from "react-router-dom";
 
 const ClienteEditar = () => {
-
-    const { id } = useParams();
+    const id = localStorage.getItem("id");
     const [nome, setNome] = useState("");
     const [userName, setUserName] = useState("");
     const [telefone, setTelefone] = useState("");
@@ -16,20 +15,20 @@ const ClienteEditar = () => {
     const [bairro, setBairro] = useState("");
     const [cidade, setCidade] = useState("");
     const [estado, setEstado] = useState("");
-    const [identificador, setIdentificador] = useState('')
+    const history = useHistory();
 
     useEffect(() => {
         http.get("cliente/detalhe/" + id).then((response) => {
             setNome(response.data.nome);
-            setUserName(response.data.userName);
+            setUserName(response.data.username);
             setTelefone(response.data.telefone);
-            setCep(response.data.cep);
-            setRua(response.data.rua);
-            setNumero(response.data.numero);
-            setBairro(response.data.bairro);
-            setCidade(response.data.cidade);
-            setEstado(response.data.estado);
-            setIdentificador(response.data.id);
+            setCep(response.data.endereco.cep);
+            setRua(response.data.endereco.rua);
+            setNumero(response.data.endereco.numeroResidencia);
+            setBairro(response.data.endereco.bairro);
+            setCidade(response.data.endereco.cidade);
+            setEstado(response.data.endereco.estado);
+            console.log(response.data);
         });
     }, [id]);
 
@@ -58,20 +57,21 @@ const ClienteEditar = () => {
         evento.preventDefault();
         const usuario = {
             nome: nome,
-            userName: userName,
+            username: userName,
             telefone: telefone,
-            cep: cep,
-            rua: rua,
-            numero: numero,
-            bairro: bairro,
-            cidade: cidade,
-            estado: estado,
+            endereco: {
+                cep: cep,
+                rua: rua,
+                numeroResidencia: numero,
+                bairro: bairro,
+                cidade: cidade,
+                estado: estado,
+            },
             id: id,
         };
-        http.put("cliente/" + identificador, usuario)
+        console.log(usuario);
+        http.put("cliente/" + id, usuario)
             .then((response) => {
-                console.log("cheguei aqui");
-                console.log(response.data);
                 alert(`Usuário ${nome} atualizado com sucesso!`);
                 setNome("");
                 setUserName("");
@@ -82,6 +82,7 @@ const ClienteEditar = () => {
                 setBairro("");
                 setCidade("");
                 setEstado("");
+                history.push("/");
             })
             .catch((erro) => {
                 console.log("Algo deu erro");
