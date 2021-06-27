@@ -2,18 +2,45 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./estilos.css";
 import http from "../../components/http";
-const Produto = () => {
+import { useHistory } from "react-router-dom";
+
+
+const Produto = (props) => {
+    const [produtos, setProdutos] = useState([]);
     const { id } = useParams();
     const [produto, setProduto] = useState({});
+    
+        const getProdutos = () => {
+            http.get("produto/todos")
+                .then((responta) => setProdutos(responta.data))
+                .catch((erro) => console.log(erro));
+        };
+        useEffect(() => {
+            getProdutos();
+        }, []);
+        
     useEffect(() => {
         http.get("/produto/id/" + id).then((response) =>
             setProduto(response.data)
         );
     }, [id]);
 
+    const history = useHistory();
+
     const adicionarCarrinho = (evento) => {
-        evento.preventDefault();
-        console.log("adicionado");
+        evento.preventDefault()
+        if (localStorage.getItem('token')) {
+            return (
+                props.adicionaProduto({
+                    id: produto.id,
+                    nome: produto.nome,
+                    preco: produto.preco,
+                    codigo: produto.codigo,
+                    quantidade: 1,
+                })
+            )
+        }
+        return history.push("/login")
     };
 
     return (

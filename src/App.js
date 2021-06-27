@@ -26,6 +26,7 @@ function App() {
 
     const onLogout = () => {
         setToken('')
+        setCarrinho('')
     }
 
     const [carrinho, setCarrinho] = useState([]);
@@ -83,7 +84,7 @@ function App() {
                         <Produtos adicionaProduto={adicionaProduto} token={token}/>
                     </Route>
                     <Route path="/produto/id/:id">
-                        <Produto adicionaProduto={adicionaProduto} />
+                        <Produto adicionaProduto={adicionaProduto} token={token}/>
                     </Route>
                     <Route path="/categorias">
                         <Categorias />
