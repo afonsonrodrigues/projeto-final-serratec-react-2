@@ -6,18 +6,8 @@ import { useHistory } from "react-router-dom";
 
 
 const Produto = (props) => {
-    const [produtos, setProdutos] = useState([]);
     const { id } = useParams();
     const [produto, setProduto] = useState({});
-    
-        const getProdutos = () => {
-            http.get("produto/todos")
-                .then((responta) => setProdutos(responta.data))
-                .catch((erro) => console.log(erro));
-        };
-        useEffect(() => {
-            getProdutos();
-        }, []);
         
     useEffect(() => {
         http.get("/produto/id/" + id).then((response) =>
@@ -57,7 +47,7 @@ const Produto = (props) => {
                     <div className="col card card-body inf">
                         <h1 className="produto">{produto.nome}</h1>
                         <h3 className="preco">R$ {produto.preco}</h3>
-                        <button className="buttonDetalhes" onClick={adicionar}>
+                        <button className="buttonDetalhes" onClick={adicionarCarrinho}>
                             Adicionar ao carrinho
                         </button>
                     </div>
