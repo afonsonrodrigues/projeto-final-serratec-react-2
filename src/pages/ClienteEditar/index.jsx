@@ -16,9 +16,10 @@ const ClienteEditar = () => {
     const [bairro, setBairro] = useState("");
     const [cidade, setCidade] = useState("");
     const [estado, setEstado] = useState("");
+    const [identificador, setIdentificador] = useState('')
 
     useEffect(() => {
-        http.get("cliente/" + id).then((response) => {
+        http.get("cliente/detalhe/" + id).then((response) => {
             setNome(response.data.nome);
             setUserName(response.data.userName);
             setTelefone(response.data.telefone);
@@ -28,6 +29,7 @@ const ClienteEditar = () => {
             setBairro(response.data.bairro);
             setCidade(response.data.cidade);
             setEstado(response.data.estado);
+            setIdentificador(response.data.id);
         });
     }, [id]);
 
@@ -66,8 +68,9 @@ const ClienteEditar = () => {
             estado: estado,
             id: id,
         };
-        http.put("cliente/" + id, usuario)
+        http.put("cliente/" + identificador, usuario)
             .then((response) => {
+                console.log("cheguei aqui");
                 console.log(response.data);
                 alert(`Usuário ${nome} atualizado com sucesso!`);
                 setNome("");

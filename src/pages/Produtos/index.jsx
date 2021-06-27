@@ -13,7 +13,7 @@ const Produtos = ({ adicionaProduto }) => {
     useEffect(() => {
         getProdutos();
     }, []);
-    console.log(produtos);
+    
     return (
         <div className="container">
             <div className="row">

@@ -4,6 +4,7 @@ import http from "../../components/http";
 import { useState } from "react";
 import logoLogin from "../../assets/img/logoLogin.png";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const ClienteCadastrar = () => {
     const [nome, setNome] = useState("");
@@ -19,6 +20,8 @@ const ClienteCadastrar = () => {
     const [bairro, setBairro] = useState("");
     const [cidade, setCidade] = useState("");
     const [estado, setEstado] = useState("");
+
+    const history = useHistory();
 
     const cpfHandle = (evento) => {
         if (evento.target.value.length <= 11) setCpf(evento.target.value);
@@ -66,6 +69,7 @@ const ClienteCadastrar = () => {
         console.log(usuario);
         http.post("cliente", usuario)
             .then((response) => {
+                history.push("/login/");
                 console.log(response.data);
                 console.log(usuario);
                 localStorage.setItem("token", response.data.access_token);
