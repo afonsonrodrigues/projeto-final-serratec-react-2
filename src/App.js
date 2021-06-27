@@ -80,7 +80,7 @@ function App() {
                         />
                     </Route>
                     <Route exact path="/produtos">
-                        <Produtos adicionaProduto={adicionaProduto} />
+                        <Produtos adicionaProduto={adicionaProduto} token={token}/>
                     </Route>
                     <Route path="/produto/id/:id">
                         <Produto adicionaProduto={adicionaProduto} />

@@ -1,19 +1,29 @@
 import { Link } from "react-router-dom";
 import "./estilo.css";
+import { useHistory } from "react-router-dom";
+
+
 const CardProdutos = (props) => {
     const formatter = new Intl.NumberFormat("pr-BR", {
         style: "currency",
         currency: "BRL",
     });
 
+    const history = useHistory();
+
     const adicionar = () => {
-        props.adicionaProduto({
-            id: props.id,
-            nome: props.nome,
-            preco: props.preco,
-            codigo: props.codigo,
-            quantidade: 1,
-        });
+        if (props.token) {
+            return (
+                props.adicionaProduto({
+                    id: props.id,
+                    nome: props.nome,
+                    preco: props.preco,
+                    codigo: props.codigo,
+                    quantidade: 1,
+                })
+            )
+        }
+        return history.push("/login")
     };
 
     return (
