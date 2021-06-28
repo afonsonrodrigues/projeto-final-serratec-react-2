@@ -36,23 +36,6 @@ div {
     font-weight: bold;
 }
 
-input {
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    display: block;
-    width: 100%;
-    margin-bottom: 16px;
-    font-size: 1rem;
-    border: none;
-    border-bottom: 3px solid black;
-    height: 25px;
-}
-
-input:focus {
-    outline: none;
-    border-bottom: 3px solid rgb(86, 83, 83);
-}
-
 button {
     width: 100%;
     font-size: 1rem;

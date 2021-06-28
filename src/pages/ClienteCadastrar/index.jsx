@@ -100,11 +100,12 @@ const ClienteCadastrar = () => {
                 <form className="formCadastro" onSubmit={efetuarCadastro}>
                     <img src={logoLogin} alt="Logo login" />
                     <h3>Cadastro</h3>
-                    <div className=" d-flex flex-row flex-wrap">
+                    <div className=" d-flex flex-row flex-wrap justify-content-around">
                         <div className="cadastro1">
                             <div>
                                 <label>Nome</label>
                                 <input
+                                    className="form-control py-2 px-4"
                                     required
                                     type="text"
                                     value={nome}
@@ -117,6 +118,7 @@ const ClienteCadastrar = () => {
                             <div>
                                 <label>Email</label>
                                 <input
+                                    className="form-control py-2 px-4"
                                     required
                                     type="email"
                                     value={email}
@@ -129,6 +131,7 @@ const ClienteCadastrar = () => {
                             <div>
                                 <label>Username</label>
                                 <input
+                                    className="form-control py-2 px-4"
                                     required
                                     type="text"
                                     value={userName}
@@ -139,9 +142,10 @@ const ClienteCadastrar = () => {
                                     placeholder="Digite seu nome de usuário"
                                 />
                             </div>
-                            <form className="row g-3">
+                            <div>
                                 <label>Senha</label>
                                 <input
+                                    className="form-control py-2 px-4"
                                     required
                                     type="password"
                                     value={senha}
@@ -150,10 +154,11 @@ const ClienteCadastrar = () => {
                                     }
                                     placeholder="Crie uma senha de 8 a 15 digitos"
                                 />
-                            </form>
+                            </div>
                             <div>
                                 <label>CPF</label>
                                 <input
+                                    className="form-control py-2 px-4"
                                     required
                                     type="number"
                                     value={cpf}
@@ -164,6 +169,7 @@ const ClienteCadastrar = () => {
                             <div>
                                 <label>Telefone</label>
                                 <input
+                                    className="form-control py-2 px-4"
                                     required
                                     type="number"
                                     value={telefone}
@@ -176,6 +182,7 @@ const ClienteCadastrar = () => {
                             <div>
                                 <label>Data de Nascimento</label>
                                 <input
+                                    className="form-control py-2 px-4"
                                     required
                                     type="data"
                                     value={dataNascimento}
@@ -190,6 +197,7 @@ const ClienteCadastrar = () => {
                             <div>
                                 <label>Cep</label>
                                 <input
+                                    className="form-control py-2 px-4"
                                     required
                                     type="number"
                                     value={cep}
@@ -201,6 +209,7 @@ const ClienteCadastrar = () => {
                             <div>
                                 <label>Rua</label>
                                 <input
+                                    className="form-control py-2 px-4"
                                     required
                                     type="text"
                                     value={rua}
@@ -212,6 +221,7 @@ const ClienteCadastrar = () => {
                             <div>
                                 <label>Numero Residência</label>
                                 <input
+                                    className="form-control py-2 px-4"
                                     required
                                     type="number"
                                     value={numero}
@@ -224,6 +234,7 @@ const ClienteCadastrar = () => {
                             <div>
                                 <label>Bairro</label>
                                 <input
+                                    className="form-control py-2 px-4"
                                     required
                                     type="text"
                                     value={bairro}
@@ -235,6 +246,7 @@ const ClienteCadastrar = () => {
                             <div>
                                 <label>Cidade</label>
                                 <input
+                                    className="form-control py-2 px-4"
                                     required
                                     type="text"
                                     value={cidade}

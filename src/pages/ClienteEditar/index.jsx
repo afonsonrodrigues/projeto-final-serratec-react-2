@@ -96,104 +96,112 @@ const ClienteEditar = () => {
                 <form className="formCadastro" onSubmit={efetuarCadastro}>
                     <img src={logoLogin} alt="Logo login" />
                     <h3>Editar Cadastro</h3>
-                    <div>
-                        <label>Nome</label>
-                        <input
-                            required
-                            type="text"
-                            value={nome}
-                            onChange={(evento) => setNome(evento.target.value)}
-                            placeholder="Digite seu nome completo"
-                        />
-                    </div>
-                    <div>
-                        <label>Username</label>
-                        <input
-                            required
-                            type="text"
-                            value={userName}
-                            onChange={(evento) =>
-                                setUserName(evento.target.value)
-                            }
-                            placeholder="Digite seu nome de usuário"
-                        />
-                    </div>
-                    <div>
-                        <label>Telefone</label>
-                        <input
-                            required
-                            type="number"
-                            value={telefone}
-                            onChange={(evento) =>
-                                setTelefone(evento.target.value)
-                            }
-                            placeholder="(XX) 99999-9999"
-                        />
-                    </div>
-                    <div>
-                        <label>Cep</label>
-                        <input
-                            required
-                            type="number"
-                            value={cep}
-                            onBlur={obterCep}
-                            onChange={cepHandle}
-                            placeholder="Apenas os 8 digitos"
-                        />
-                    </div>
-                    <div>
-                        <label>Rua</label>
-                        <input
-                            required
-                            type="text"
-                            value={rua}
-                            onChange={(evento) => setRua(evento.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label>Numero Residência</label>
-                        <input
-                            required
-                            type="number"
-                            value={numero}
-                            onChange={(evento) =>
-                                setNumero(evento.target.value)
-                            }
-                            placeholder="Digite o número da sua residência"
-                        />
-                    </div>
-                    <div>
-                        <label>Bairro</label>
-                        <input
-                            required
-                            type="text"
-                            value={bairro}
-                            onChange={(evento) =>
-                                setBairro(evento.target.value)
-                            }
-                        />
-                    </div>
-                    <div>
-                        <label>Cidade</label>
-                        <input
-                            required
-                            type="text"
-                            value={cidade}
-                            onChange={(evento) =>
-                                setCidade(evento.target.value)
-                            }
-                        />
-                    </div>
-                    <div>
-                        <label>Estado</label>
-                        <input
-                            required
-                            type="text"
-                            value={estado}
-                            onChange={(evento) =>
-                                setEstado(evento.target.value)
-                            }
-                        />
+                    <div className=" d-flex flex-row flex-wrap justify-content-around">
+                        <div className="cadastro1">
+                            <div>
+                                <label>Nome</label>
+                                <input
+                                    className="form-control py-2 px-4"
+                                    required
+                                    type="text"
+                                    value={nome}
+                                    onChange={(evento) =>
+                                        setNome(evento.target.value)
+                                    }
+                                    placeholder="Digite seu nome completo"
+                                />
+                            </div>
+                            <div>
+                                <label>Username</label>
+                                <input
+                                    className="form-control py-2 px-4"
+                                    required
+                                    type="text"
+                                    value={userName}
+                                    onChange={(evento) =>
+                                        setUserName(evento.target.value)
+                                    }
+                                    minLength="5"
+                                    placeholder="Digite seu nome de usuário"
+                                />
+                            </div>
+                            <div>
+                                <label>Telefone</label>
+                                <input
+                                    className="form-control py-2 px-4"
+                                    required
+                                    type="number"
+                                    value={telefone}
+                                    onChange={(evento) =>
+                                        setTelefone(evento.target.value)
+                                    }
+                                    placeholder="(XX) 99999-9999"
+                                />
+                            </div>
+                        </div>
+                        <div className="cadastro2">
+                            <div>
+                                <label>Cep</label>
+                                <input
+                                    className="form-control py-2 px-4"
+                                    required
+                                    type="number"
+                                    value={cep}
+                                    onBlur={obterCep}
+                                    onChange={cepHandle}
+                                    placeholder="Apenas os 8 digitos"
+                                />
+                            </div>
+                            <div>
+                                <label>Rua</label>
+                                <input
+                                    className="form-control py-2 px-4"
+                                    required
+                                    type="text"
+                                    value={rua}
+                                    onChange={(evento) =>
+                                        setRua(evento.target.value)
+                                    }
+                                />
+                            </div>
+                            <div>
+                                <label>Numero Residência</label>
+                                <input
+                                    className="form-control py-2 px-4"
+                                    required
+                                    type="number"
+                                    value={numero}
+                                    onChange={(evento) =>
+                                        setNumero(evento.target.value)
+                                    }
+                                    placeholder="Digite o número da sua residência"
+                                />
+                            </div>
+                            <div>
+                                <label>Bairro</label>
+                                <input
+                                    className="form-control py-2 px-4"
+                                    required
+                                    type="text"
+                                    value={bairro}
+                                    onChange={(evento) =>
+                                        setBairro(evento.target.value)
+                                    }
+                                />
+                            </div>
+                            <div>
+                                <label>Cidade</label>
+                                <input
+                                    className="form-control py-2 px-4"
+                                    required
+                                    type="text"
+                                    value={cidade}
+                                    onChange={(evento) =>
+                                        setCidade(evento.target.value)
+                                    }
+                                />
+                            </div>
+                        </div>
                     </div>
                     <button>Salvar</button>
                 </form>

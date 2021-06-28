@@ -46,9 +46,9 @@ const FormularioLogin = ({ onLogin, pegarNome }) => {
             <img className="logoLogin" src={logoLogin} alt="Logo e-commerce" />
             <h3>Login</h3>
             <label>E-mail</label>
-            <input type="text" value={email} onChange={manipularEmail} />
+            <input type="text" value={email} onChange={manipularEmail} className="form-control"/>
             <label>Senha</label>
-            <input type="password" value={senha} onChange={manipularSenha} />
+            <input type="password" value={senha} onChange={manipularSenha} className="form-control"/>
             <button>Login</button>
             <p>
                 Ainda não é cadastrado?{" "}
